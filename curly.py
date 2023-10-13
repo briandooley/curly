@@ -4,13 +4,13 @@ from bs4 import BeautifulSoup, Comment
 import re
 
 def highlight_words_in_text(text):
-    # Regular expression pattern to match words in curly braces
+    # Regex to match words in curly braces
     pattern = r'\{([^}]+)\}'
 
-    # Function to replace matched words with highlighted versions
+    # Replace matched words with highlighted versions
     def replace(match):
         word = match.group(1)
-        return f'\033[91m{{{word}}}\033[0m'  # Using ANSI escape codes for red text
+        return f'\033[91m{{{word}}}\033[0m' 
 
     return re.sub(pattern, replace, text)
 
@@ -21,7 +21,7 @@ def fetch_and_display_url_content(url):
 
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Find and process text outside of HTML tags, code blocks, and lines starting with '$'
+        # Process text outside of HTML tags, code blocks, and lines starting with '$'
         for element in soup.find_all(string=True):
             if (
                 element.parent.name not in ['script', 'style']
