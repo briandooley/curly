@@ -8,4 +8,5 @@ Requires:
     pip install beautifulsoup4
 
 To run:
+
     python3 curly.py <link>
