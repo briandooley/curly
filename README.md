@@ -1,7 +1,7 @@
 # curly
-Script to check for unrendered attributes on docs pages
+Python script to check for unrendered attributes on docs pages
 
-Requires:
+Requires the following python libraries:
 
     pip install requests
 
